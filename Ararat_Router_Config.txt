@@ -1,0 +1,100 @@
+Current configuration : 1178 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname Ararat-Medical-Clinic
+!
+!
+!
+enable secret 5 $1$mERr$yRBeW6I.eXEUO.SBR2XXZ/
+!
+!
+!
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO1941/K9 sn FTX1524JA5C-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ ip address 10.7.33.33 255.255.255.240
+ ip access-group 100 in
+ ip access-group outboundAD out
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface Serial0/1/0
+ ip address 10.7.33.66 255.255.255.252
+ clock rate 2000000
+!
+interface Serial0/1/1
+ no ip address
+ clock rate 2000000
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router eigrp 100
+ network 10.7.33.32 0.0.0.15
+ network 10.7.33.64 0.0.0.3
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+access-list 100 deny icmp 10.7.33.32 0.0.0.15 10.7.33.0 0.0.0.15 echo
+access-list 100 permit ip any any
+!
+banner motd ^CAuthorised Access Only^C
+!
+!
+!
+!
+line con 0
+ password 7 0822455D0A163200412A
+ login
+!
+line aux 0
+!
+line vty 0 4
+ password 7 0822455D0A163200412A
+ login
+!
+!
+!
+end
