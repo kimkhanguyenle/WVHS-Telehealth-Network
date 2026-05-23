@@ -49,13 +49,13 @@ The infrastructure supports:
 ## Screenshots
 
 ### Logical Topology
-Including in the Report and also Cisco Packet Tracer
+Including in the Report and Cisco Packet Tracer
 
 ### Successful Routing Verification
-Including in the Report and also Cisco Packet Tracer
+Including in the Report and Cisco Packet Tracer
 
 ### EIGRP Neighbor Verification
-Including in the Report and also Cisco Packet Tracer
+Including in the Report and Cisco Packet Tracer
 
 ---
 
